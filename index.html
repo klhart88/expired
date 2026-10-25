@@ -2073,125 +2073,242 @@ header.top .smartiq-lockup .lockup-tagline {
 }
   
 /* Approved mobile contact row: keep Call/Text/Email together */
+
 @media(max-width:900px){
+
   .mobile-contact-group{
+
     margin-bottom:0 !important;
+
     padding-bottom:0 !important;
+
   }
+
   .mobile-contact-grid{
+
     display:grid !important;
+
     grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+
     gap:8px !important;
+
   }
+
   .mobile-contact-grid a{
+
     min-height:46px !important;
+
     padding:10px 8px !important;
+
     display:flex !important;
+
     align-items:center !important;
+
     justify-content:center !important;
+
     text-align:center !important;
+
   }
-}
-@media(max-width:620px){
-  .mobile-contact-grid{
-    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
-  }
+
 }
 
-  
-/* Mobile menu safe spacing so contact buttons do not sit behind browser controls */
-@media (max-width: 900px) {
-  .mobile-menu {
-    max-height: calc(100dvh - 110px) !important;
-    overflow-y: auto !important;
-    padding-bottom: max(22px, env(safe-area-inset-bottom)) !important;
+@media(max-width:620px){
+
+  .mobile-contact-grid{
+
+    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+
   }
+
+}
+
+
+
+
+
+/* Mobile menu safe spacing so contact buttons do not sit behind browser controls */
+
+@media (max-width: 900px) {
+
+  .mobile-menu {
+
+    max-height: calc(100dvh - 110px) !important;
+
+    overflow-y: auto !important;
+
+    padding-bottom: max(22px, env(safe-area-inset-bottom)) !important;
+
+  }
+
+
 
   .mobile-contact-grid {
+
     display: grid !important;
+
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
     gap: 8px !important;
+
     margin-bottom: 6px !important;
+
   }
 
+
+
   .mobile-contact-grid a {
+
     min-height: 46px !important;
+
     padding: 10px 8px !important;
+
     display: flex !important;
+
     align-items: center !important;
+
     justify-content: center !important;
+
     text-align: center !important;
+
   }
+
 }
+
+
+
 
 
 /* =========================================================
+
    v27 mobile header cascade fix
+
    Keeps approved header responsive after component CSS loads last.
+
    ========================================================= */
+
 @media (min-width: 901px) {
+
   header.top .mobile-menu-toggle,
+
   header.top .mobile-menu {
+
     display: none !important;
+
   }
+
 }
+
+
 
 @media (max-width: 900px) {
+
   header.top .nav-links.desktop-nav.simple-dropdown-nav {
+
     display: none !important;
+
     visibility: hidden !important;
+
     pointer-events: none !important;
+
   }
+
+
 
   header.top .mobile-menu-toggle {
+
     display: inline-flex !important;
+
     margin-left: auto !important;
+
     flex: 0 0 auto !important;
+
   }
+
+
 
   header.top .nav {
+
     position: relative !important;
+
   }
+
+
 
   header.top .mobile-menu {
+
     display: none !important;
+
     position: absolute !important;
+
     top: calc(100% + 10px) !important;
+
     left: 16px !important;
+
     right: 16px !important;
+
     z-index: 9999 !important;
+
     max-height: calc(100dvh - 110px) !important;
+
     overflow-y: auto !important;
+
     padding-bottom: max(22px, env(safe-area-inset-bottom)) !important;
+
   }
+
+
 
   header.top .mobile-menu.is-open {
+
     display: grid !important;
+
     gap: 14px !important;
+
   }
 
+
+
   header.top .mobile-contact-grid {
+
     display: grid !important;
+
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
     gap: 8px !important;
+
   }
+
+
 
   header.top .mobile-contact-grid a {
+
     min-height: 46px !important;
+
     padding: 10px 8px !important;
+
     display: flex !important;
+
     align-items: center !important;
+
     justify-content: center !important;
+
     text-align: center !important;
+
   }
+
 }
+
+
 
 @media (max-width: 620px) {
-  header.top .mobile-contact-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-}
 
+  header.top .mobile-contact-grid {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+  }
+
+}
 
 
 
