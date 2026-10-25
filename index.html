@@ -1957,121 +1957,237 @@ header.top .smartiq-lockup .lockup-tagline {
 }
 
 /* Final Contact Kelvin dropdown fix */
+
 .header-contact-menu{
+
   position:relative !important;
+
 }
+
 .header-contact-menu .contact-options{
+
   position:absolute !important;
+
   top:calc(100% + 10px) !important;
+
   right:0 !important;
+
   min-width:190px !important;
+
   background:#fff !important;
+
   border:1px solid rgba(17,24,39,.08) !important;
+
   border-radius:10px !important;
+
   box-shadow:0 16px 36px rgba(17,24,39,.11),0 2px 8px rgba(17,24,39,.04) !important;
+
   padding:6px !important;
+
   display:grid !important;
+
   gap:2px !important;
+
   opacity:0 !important;
+
   visibility:hidden !important;
+
   pointer-events:none !important;
+
   transform:translateY(6px) !important;
+
   transition:opacity .16s ease, transform .16s ease, visibility .16s ease !important;
+
   z-index:9999 !important;
+
 }
+
 .header-contact-menu .contact-options.is-open,
+
 .header-contact-menu.contact-open .contact-options{
+
   opacity:1 !important;
+
   visibility:visible !important;
+
   pointer-events:auto !important;
+
   transform:translateY(0) !important;
+
 }
+
 .header-contact-menu .contact-options a{
+
   display:flex !important;
+
   align-items:center !important;
+
   justify-content:space-between !important;
+
   padding:10px 11px !important;
+
   border-radius:7px !important;
+
   color:#111827 !important;
+
   font-size:13.5px !important;
+
   font-weight:550 !important;
+
   text-decoration:none !important;
+
   white-space:nowrap !important;
+
 }
+
 .header-contact-menu .contact-options a:hover,
+
 .header-contact-menu .contact-options a:focus{
+
   background:#f6f5f2 !important;
+
   color:#c40000 !important;
+
 }
+
+
 
 /* Two-row Contact Kelvin menu */
+
 .header-contact-menu .contact-options{
+
   min-width:270px !important;
+
   width:270px !important;
+
   padding:8px !important;
+
   gap:3px !important;
+
 }
+
 .header-contact-menu .contact-options a{
+
   grid-template-columns:72px minmax(0,1fr) 18px !important;
+
   column-gap:8px !important;
+
   padding:10px 10px !important;
+
 }
+
 .header-contact-menu .contact-option-copy strong{
+
   font-size:13.25px !important;
+
   white-space:nowrap !important;
+
 }
+
 .header-contact-menu .contact-option-copy small{
+
   font-size:12px !important;
+
 }
+
 .header-contact-menu .contact-option-arrow{
+
   font-size:14px !important;
+
 }
+
+
 
 /* Contact Kelvin: cleaner two-column alignment */
+
 .header-contact-menu .contact-options{
+
   min-width:315px !important;
+
   width:315px !important;
+
 }
+
 .header-contact-menu .contact-options a{
+
   grid-template-columns:72px minmax(0,1fr) 18px !important;
+
   column-gap:12px !important;
+
   align-items:center !important;
+
 }
+
 .header-contact-menu .contact-option-copy strong,
+
 .header-contact-menu .contact-option-copy small{
+
   text-align:left !important;
+
 }
+
+
 
 /* Contact Kelvin: move details closer to arrows */
+
 .header-contact-menu .contact-options a{
+
   grid-template-columns:72px minmax(0,1fr) 18px !important;
+
   column-gap:10px !important;
-}
-.header-contact-menu .contact-option-copy strong{
-  text-align:left !important;
-}
-.header-contact-menu .contact-option-copy small{
-  justify-self:end !important;
-  text-align:right !important;
-  max-width:100% !important;
-}
-.header-contact-menu .contact-option-arrow{
-  justify-self:end !important;
+
 }
 
-/* Contact Kelvin: tighten detail-to-arrow spacing */
-.header-contact-menu .contact-options a{
-  column-gap:5px !important;
+.header-contact-menu .contact-option-copy strong{
+
+  text-align:left !important;
+
 }
+
 .header-contact-menu .contact-option-copy small{
+
   justify-self:end !important;
+
   text-align:right !important;
+
+  max-width:100% !important;
+
 }
+
 .header-contact-menu .contact-option-arrow{
+
   justify-self:end !important;
-  margin-left:0 !important;
+
 }
-  
+
+
+
+/* Contact Kelvin: tighten detail-to-arrow spacing */
+
+.header-contact-menu .contact-options a{
+
+  column-gap:5px !important;
+
+}
+
+.header-contact-menu .contact-option-copy small{
+
+  justify-self:end !important;
+
+  text-align:right !important;
+
+}
+
+.header-contact-menu .contact-option-arrow{
+
+  justify-self:end !important;
+
+  margin-left:0 !important;
+
+}
+
+
+
 /* Approved mobile contact row: keep Call/Text/Email together */
 
 @media(max-width:900px){
