@@ -11,6 +11,107 @@
 
   gtag('config', 'G-0VPF1V6CKZ');
 </script>
+<script>
+/* SmartIQ approved header component JS | Source: header.js */
+(function(){
+    const toggle = document.querySelector("[data-mobile-menu-toggle]");
+    const menu = document.querySelector("[data-mobile-menu]");
+    if(!toggle || !menu) return;
+
+    function setOpen(isOpen){
+      toggle.classList.toggle("is-open", isOpen);
+      menu.classList.toggle("is-open", isOpen);
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    toggle.addEventListener("click", function(event){
+      event.preventDefault();
+      setOpen(!menu.classList.contains("is-open"));
+    });
+
+    menu.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click", function(){
+        setOpen(false);
+      });
+    });
+
+    document.addEventListener("click", function(event){
+      if(!menu.contains(event.target) && !toggle.contains(event.target)){
+        setOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", function(event){
+      if(event.key === "Escape"){
+        setOpen(false);
+      }
+    });
+  })();
+
+  (function(){
+    function closeContactMenus(){
+      document.querySelectorAll(".header-contact-menu").forEach(function(menu){
+        const toggle = menu.querySelector("[data-contact-toggle]");
+        const options = menu.querySelector("[data-contact-options]");
+        menu.classList.remove("contact-open");
+        if(options) options.classList.remove("is-open");
+        if(toggle) toggle.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    document.addEventListener("click", function(event){
+      const toggle = event.target.closest("[data-contact-toggle]");
+      const clickedInsideMenu = event.target.closest("[data-contact-options]");
+
+      if(toggle){
+        event.preventDefault();
+        event.stopPropagation();
+
+        const menu = toggle.closest(".header-contact-menu");
+        const options = menu ? menu.querySelector("[data-contact-options]") : null;
+        if(!menu || !options) return;
+
+        const shouldOpen = !menu.classList.contains("contact-open");
+        closeContactMenus();
+
+        if(shouldOpen){
+          menu.classList.add("contact-open");
+          options.classList.add("is-open");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+        return;
+      }
+
+      if(clickedInsideMenu){
+        const link = event.target.closest("a");
+        if(link){
+          closeContactMenus();
+        }
+        return;
+      }
+
+      closeContactMenus();
+    }, true);
+
+    document.addEventListener("keydown", function(event){
+      if(event.key === "Escape"){
+        closeContactMenus();
+      }
+    });
+  })();
+
+  (function(){
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
+    dropdowns.forEach(function(drop){
+      drop.addEventListener("mouseenter", function(){
+        const active = document.activeElement;
+        if(active && active.classList && active.classList.contains("nav-drop-trigger") && !drop.contains(active)){
+          active.blur();
+        }
+      });
+    });
+  })();
+</script>
 <link href="/favicon-32x32.png" rel="icon" type="image/png"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
