@@ -2589,103 +2589,6 @@ header.top .smartiq-lockup .lockup-tagline {
     .chat-nudge { right: 16px; bottom: 86px; max-width: 200px; font-size: 12px; }
   }
 </style>
-<!-- ═══════════════════════════════════════════════════════════════
-     STEP 3 — Paste just before <script>
-/* Contact Kelvin dropdown: click-to-toggle, outside click and Escape to close. */
-(()=>{
-  const menu=document.querySelector('header.top .header-contact-menu');
-  if(!menu)return;
-  const button=menu.querySelector('[data-contact-toggle]');
-  const options=menu.querySelector('[data-contact-options]');
-  if(!button||!options)return;
-  const setOpen=open=>{
-    menu.classList.toggle('contact-open',open);
-    options.classList.toggle('is-open',open);
-    button.setAttribute('aria-expanded',String(open));
-  };
-  button.addEventListener('click',event=>{
-    event.stopPropagation();
-    setOpen(!menu.classList.contains('contact-open'));
-  });
-  document.addEventListener('click',event=>{
-    if(!menu.contains(event.target))setOpen(false);
-  });
-  document.addEventListener('keydown',event=>{
-    if(event.key==='Escape'){
-      setOpen(false);
-      button.focus();
-    }
-  });
-})();
-</script>
-<script>
-/* Mobile navigation: dedicated touch/click control, independent of desktop dropdown. */
-(() => {
-  const toggle = document.querySelector('[data-mobile-menu-toggle]');
-  const menu = document.querySelector('[data-mobile-menu]');
-  if (!toggle || !menu) return;
-  const setOpen = (open) => {
-    toggle.classList.toggle('is-open', open);
-    menu.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  };
-  toggle.addEventListener('click', (event) => {
-    event.stopPropagation();
-    setOpen(!menu.classList.contains('is-open'));
-  });
-  document.addEventListener('click', (event) => {
-    if (!toggle.contains(event.target) && !menu.contains(event.target)) setOpen(false);
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
-      setOpen(false);
-      toggle.focus();
-    }
-  });
-  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) setOpen(false);
-  });
-})();
-</script>
-</body>
-     JotForm AI chatbot embed (loads the floating chat button)
-     Agent ID: 019438e2115c7445a4fb44e560c787d8bc5a
-     ═══════════════════════════════════════════════════════════════ -->
-
-<!-- ═══════════════════════════════════════════════════════════════
-     STEP 4 — Paste just before <script>
-/* Contact Kelvin dropdown: click-to-toggle, outside click and Escape to close. */
-(()=>{
-  const menu=document.querySelector('header.top .header-contact-menu');
-  if(!menu)return;
-  const button=menu.querySelector('[data-contact-toggle]');
-  const options=menu.querySelector('[data-contact-options]');
-  if(!button||!options)return;
-  const setOpen=open=>{
-    menu.classList.toggle('contact-open',open);
-    options.classList.toggle('is-open',open);
-    button.setAttribute('aria-expanded',String(open));
-  };
-  button.addEventListener('click',event=>{
-    event.stopPropagation();
-    setOpen(!menu.classList.contains('contact-open'));
-  });
-  document.addEventListener('click',event=>{
-    if(!menu.contains(event.target))setOpen(false);
-  });
-  document.addEventListener('keydown',event=>{
-    if(event.key==='Escape'){
-      setOpen(false);
-      button.focus();
-    }
-  });
-})();
-</script>
-</body>, AFTER step 3
-     Chat nudge logic + auto-close guard
-     ═══════════════════════════════════════════════════════════════ -->
 
 <script>
 (()=>{
@@ -2731,31 +2634,36 @@ header.top .smartiq-lockup .lockup-tagline {
   });
   render();
 })();
-</script><script>
-/* Contact Kelvin dropdown: click-to-toggle, outside click and Escape to close. */
-(()=>{
-  const menu=document.querySelector('header.top .header-contact-menu');
-  if(!menu)return;
-  const button=menu.querySelector('[data-contact-toggle]');
-  const options=menu.querySelector('[data-contact-options]');
-  if(!button||!options)return;
-  const setOpen=open=>{
-    menu.classList.toggle('contact-open',open);
-    options.classList.toggle('is-open',open);
-    button.setAttribute('aria-expanded',String(open));
+</script>
+
+<script>
+/* Mobile navigation: dedicated touch/click control, independent of desktop dropdown. */
+(() => {
+  const toggle = document.querySelector('[data-mobile-menu-toggle]');
+  const menu = document.querySelector('[data-mobile-menu]');
+  if (!toggle || !menu) return;
+  const setOpen = (open) => {
+    toggle.classList.toggle('is-open', open);
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   };
-  button.addEventListener('click',event=>{
+  toggle.addEventListener('click', (event) => {
     event.stopPropagation();
-    setOpen(!menu.classList.contains('contact-open'));
+    setOpen(!menu.classList.contains('is-open'));
   });
-  document.addEventListener('click',event=>{
-    if(!menu.contains(event.target))setOpen(false);
+  document.addEventListener('click', (event) => {
+    if (!toggle.contains(event.target) && !menu.contains(event.target)) setOpen(false);
   });
-  document.addEventListener('keydown',event=>{
-    if(event.key==='Escape'){
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
       setOpen(false);
-      button.focus();
+      toggle.focus();
     }
+  });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) setOpen(false);
   });
 })();
 </script>
